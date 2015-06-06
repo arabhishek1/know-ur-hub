@@ -28,9 +28,9 @@ public enum  HttpClient {
     }
 
     private HttpAuthClient initHttpAuthClient() {
-        final String casUrl = "https://flo-rubycas-server.nm.flipkart.com";
-        final String casUser = "fk-ekl-gringotts";
-        final String casPassword = "4BDRnuMS";
+        final String casUrl = "<casUrl>";
+        final String casUser = "casUser";
+        final String casPassword = "casPwd";
         return new HttpAuthClient(casUrl, casUser, casPassword, true, new InMemoryCache());
     }
 
