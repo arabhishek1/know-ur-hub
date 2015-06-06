@@ -1,0 +1,43 @@
+hostName: localhost
+
+
+logging:
+  loggers:
+    "com.hackday.knowUrHub": ALL
+  file:
+    enabled: true
+    threshold: INFO
+    timeZone: IST
+    logFormat: "%highlight(%-5level) [%date] [%thread] [%cyan(%logger{0})]: %message%n"
+    currentLogFilename: ./logs/know_ur_hub.log
+    archivedLogFilenamePattern: ./logs/know_ur_hub-%d{yyyy-MM-dd-HH}.log.gz
+    archivedFileCount: 50
+  console:
+    enabled: true
+    threshold: DEBUG
+    timeZone: IST
+    logFormat: "%highlight(%-5level) [%date] [%thread] [%cyan(%logger{0})]: %message%n"
+
+mysql:
+  know_ur_hub:
+     "hibernate.connection.driver_class": "com.mysql.jdbc.Driver"
+     "hibernate.connection.url": "jdbc:mysql://localhost/know_ur_hub"
+     "hibernate.dialect": "org.hibernate.dialect.MySQLDialect"
+     "hibernate.connection.username": "root"
+     "hibernate.connection.password": ""
+     "hibernate.show_sql": "true"
+     "hibernate.format_sql": "true"
+     #"hibernate.hbm2ddl.auto": "create"
+
+
+http:
+  port: 27555
+  adminPort: 27655
+  shutdownGracePeriod: 1s
+  minThreads: 50
+  maxThreads: 100
+
+
+swagger:
+  apiVersion: "1.0.1"
+  basePath: "http://localhost:27553"
