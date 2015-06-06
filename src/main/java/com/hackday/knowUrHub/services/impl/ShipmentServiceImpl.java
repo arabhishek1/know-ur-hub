@@ -85,7 +85,7 @@ public class ShipmentServiceImpl implements ShipmentService {
     private Map<String, Integer> getPincodeAndHubName(Integer id) throws IOException {
         Map<String, Integer>PincodeHubName = new HashMap<String, Integer>();
         final HttpAuthClient httpAuthClient = httpClient.getHttpAuthClient();
-        final String facilitiesBaseUrl = "http://ekl-facilities.nm.flipkart.com/facilities?id=";
+        final String facilitiesBaseUrl = "http://localhost:27747/facilities?id=";
         final Request request = new Request(facilitiesBaseUrl + id, null, null);
         final Response response = httpAuthClient.executeGet(request);
         if (response.getStatusCode() == HttpResponseStatus.OK.getCode()) {
